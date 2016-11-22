@@ -7,22 +7,27 @@
 	 <link rel ="stylesheet" href="stil.css" >
 	 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
    </head>
-
-   <body class="body">
+<script >
+var script = document.createElement('script');
+script.src = 'script/skripta.js';
+script.onload = function()
+{};
+document.head.appendChild(script);
+</script>	   
+   <body class="body"  onload="ucitaj_lokalno()">
       <header class="mainHeader">
 	     <img src="img/mala-ikona.jpg">
 		 
 		 <nav><ul>
-		    <li class="aktivna"><a href="Rent-a-car.html">Početna</a></li>
-			<li><a href="Vozila.html">Vozila</a></li>
-            <li><a href="Rezervacija.html">Rezervacija</a></li>
-			<li><a href="Onama.html">O nama</a></li>
-            <li><a href="Kontakt.html">Kontakt</a></li>
- 
+		  <li class="aktivna"><a href="#" onclick="get('Rent-a-car')">Početna</a></li>
+			<li><a href="#" onclick="get('Vozila')">Vozila</a></li>
+            <li><a href="#" onclick="get('Rezervacija')">Rezervacija</a></li>
+			<li><a href="#" onclick="get('Onama')">O nama</a></li>
+            <li><a href="#" onclick="get('Kontakt')">Kontakt</a></li>
 		 </ul>
 		 </nav>
 	  
-      </header>	  
+      </header>	 
 	  
 	  <div class="mainContent">
 	     <div class="content">
@@ -48,17 +53,17 @@ Radno vrijeme od 09:00 do 17:00</p>
 				<content>
 				   <p><form>
                         Ime i prezime:<br>
-						<input type="text" name="ime_prezime">
+						<input type="text" name="ime_prezime" id="kontakt_ime">
 						<br>
 						E-mail:<br>
-						<input type="text" name="prezime">
+						<input type="text" name="prezime" id="kontakt_email">
 						<br>
 						Poruka:<br>
-						<textarea name="message" rows="10" cols="30">
+						<textarea name="message" rows="10" cols="30" id="kontakt_poruka">
 						Upišite kritiku, sugestiju, prijedlog ili pitajte šta vas zanima.
                        </textarea>
 					   <br>
-					   <button type="submit" >Pošalji</button>
+					   <button type="submit" onclick="sacuvaj_lokalno()" >Pošalji</button>
 					   </form>
                      </p>  
 				</content>
@@ -93,7 +98,8 @@ Radno vrijeme od 09:00 do 17:00</p>
 	  
 	  <footer class="mainFooter">
 	     <p>Copyright by Dzenan Sabanovic</p>
-       </footer>	  
+       </footer>	 
+
    </body>
    
 </html>
