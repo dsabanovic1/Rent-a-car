@@ -80,3 +80,25 @@ function ucitaj_lokalno()
 	
 	
 }
+function validirajRegistraciju()
+{
+	
+	var ime=document.getElementById('ime').value;
+	var email=document.getElementById('email').value;
+	var nadimak=document.getElementById('nadimak').value;
+	var sifra = document.getElementById('pass').value;
+	var regexIme=/^[a-z ,.'-]+$/i;
+	var regexMail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+	
+	if(!email || !regexMail.test(email))
+	{
+         
+		return false;
+	}
+	if(!ime || !regexIme.test(ime))
+	{
+		return false;
+	}
+	
+	return true;
+}

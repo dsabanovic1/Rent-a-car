@@ -41,20 +41,20 @@
 				</header>
 				<content>
 				   <p>
-				   <form>
+				   <form method = "post" onsubmit="return validirajRegistraciju()">
                         Ime i Prezime:<br>
-						<input type="text" name="ime_prezime">
+						<input type="text" name="ime_prezime" id ="ime">
 						<br>
 						E-mail:<br>
-						<input type="text" name="prezime">
+						<input type="text" name="email" id ="email">
 						<br>
 						Nickname:<br>
-						<input type="text" name="prezime">
+						<input type="text" name="nadimak" id="nadimak">
 						<br>
 						Password:<br>
-						<input type="password" name="sifra">
+						<input type="password" name="sifra" id="pass">
 						<br>
-						<button type="submit">Registruj se!</button>
+						<input type="submit" value="Registruj se">
 						</form>
 				   </p>  
 				</content>
