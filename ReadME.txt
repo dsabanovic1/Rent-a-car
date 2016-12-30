@@ -26,3 +26,23 @@ Takodjer bug je na istom carousel-u prilikom smanjivanja rezolucije(takodjer unu
 IV  - Bug-ovi koje ste primijetili ali ne znate rješenje
 /
 
+Spirala 3:
+Šta je uraðeno? 
+Na poèetnoj stranici je napravljena login forma, na koju se može logovati admin sa podacima "admin" "pass" koji se èuvaju u xml fajlu.
+Kada se loguje, pojavljuju mu se linkovi za ADMIN stranicu, pdf export te Download csv. Preko forme registracija, podaci se èuvaju u xml datoteku.
+na stranici admina, admin ima uvid u sve Rezervacije, koje se takodjer èitaju iz xml-a, te ih može brisati(ispisuje se naziv obrisanog), kao i dodavati nove 
+rezervacije. Dalje, admin ima moguænost export pdf sa kojim dobija u pdf-u listu rezervacija. Te takodjer ima opciju "download csv" kojom downloaduje 
+csv datoteku sa rezervacijama.
+Takoðer, na poèetnoj stranici je implementirana pretraga po 2 polja(ime i prezime) za admina, gdje moze pretrazivati rezervacije.
+Na stranici Rezervacija, sa forme se podaci uèitavaju u xml fajl. Podaci sa formi su zaštiæeni od xss.
+
+Šta nije uraðeno? 
+opcija "izmijeni" na adminovoj stranici.
+Opcija Trazi kod pretrage.
+
+Bug-ovi koje ste primijetili ali niste stigli ispraviti, a znate rješenje (opis rješenja)?
+Na stranici Admin.php podaci koji se ispisuju nisu lijepo formatirani, tj. poravnati, što se može ispraviti prikladnim css kodom.
+Nakon pozivanja opcije "obrisi" stranica nigdje ne vodi dalje, što se može riješiti sa pozivanjem posljednjeg prozora sa window.history.back();
+Takoðer, bug koji sam prekasno shvatio (5 do 12), na stranici admin.php , link "nazad na prethodnu" vodi na "Rezervaciju" a treba na "Registraciju".
+
+IV  - Bug-ovi koje ste primijetili ali ne znate rješenje
