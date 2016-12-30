@@ -13,11 +13,11 @@
 	     <img src="img/mala-ikona.jpg">
 		 
 		 <nav><ul>
-		    <li class="aktivna"><a href="#" onclick="get('Rent-a-car')">Početna</a></li>
-			<li><a href="#" onclick="get('Vozila')">Vozila</a></li>
-            <li><a href="#" onclick="get('Rezervacija')">Rezervacija</a></li>
-			<li><a href="#" onclick="get('Onama')">O nama</a></li>
-            <li><a href="#" onclick="get('Kontakt')">Kontakt</a></li>
+		    <li class="aktivna"><a href="Rent-a-car.php" >Početna</a></li>
+			<li><a href="Vozila.php" >Vozila</a></li>
+            <li><a href="Rezervacija.php" >Rezervacija</a></li>
+			<li><a href="Onama.php" >O nama</a></li>
+            <li><a href="Kontakt.php" >Kontakt</a></li>
 		 </ul>
 		 </nav>
 	  
@@ -31,25 +31,47 @@
 				<h2> Rezervacija</h2>
 				</header>
 				<content>
-				   <p><form>
+				<?php
+				if(isset($_REQUEST['ime']) && isset($_REQUEST['prezime']))
+				
+				{$xml= new DOMDocument("1.0","UTF-8");
+				    $ime = htmlspecialchars($_REQUEST['ime']);
+					$prezime = htmlspecialchars($_REQUEST['prezime']);
+					$vozilo = htmlspecialchars($_REQUEST['vozilo']);
+					$xml->load('XMLBaza.xml');
+
+					$rootTag = $xml->getElementsByTagName("document")->item(0);
+					$ime=$_POST['ime'];
+					$dataTag = $xml->createElement("data");
+					$imeTag=$xml->createElement("Ime", $ime);
+					$prezimeTag=$xml->createElement("Prezime", $prezime);
+					$datumTag=$xml->createElement("Datum",$_REQUEST['datum']);
+					$voziloTag=$xml->createElement("Vozilo", $vozilo);
+					$dataTag->appendChild($imeTag);
+					$dataTag->appendChild($prezimeTag);
+					$dataTag->appendChild($datumTag);
+					$dataTag->appendChild($voziloTag);
+
+					$rootTag->appendChild($dataTag);
+					$xml->save("XMLBaza.xml");
+				}
+				
+				?>
+				
+				   <p><form action="Rezervacija.php" method="post">
                         Ime:<br>
-						<input type="text" name="ime">
+						<input type="text" name="ime" value="">
 						<br>
 						Prezime:<br>
 						<input type="text" name="prezime">
 						<br>
 						Od kada želite auto? <br>
-						<input type="date" name="preuzimanje">
+						<input type="date" name="datum">
 						<br>
 						Odaberite vozilo po želji: <br>
-						<select name="vozila">
-                            <option value="volvo">Volvo</option>
-                            <option value="saab">Saab</option>
-                             <option value="fiat">Fiat</option>
-                            <option value="audi">Audi</option>
-                        </select>
+						<input type="text" name="vozilo"><br>
                          <br><br>
-						<button type="submit" >Potvrdi</button>
+						<input type="submit" name="rezervacija" value="Rezervisi" >
                        </form>
                      					   
 				   </p>  

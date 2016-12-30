@@ -14,11 +14,11 @@
 	     <img src="img/mala-ikona.jpg">
 		 
 		 <nav><ul>
-		     <li class="aktivna"><a href="#" onclick="get('Rent-a-car')">Početna</a></li>
-			<li><a href="#" onclick="get('Vozila')">Vozila</a></li>
-            <li><a href="#" onclick="get('Rezervacija')">Rezervacija</a></li>
-			<li><a href="#" onclick="get('Onama')">O nama</a></li>
-            <li><a href="#" onclick="get('Kontakt')">Kontakt</a></li>
+		     <li class="aktivna"><a href="Rent-a-car.php" >Početna</a></li>
+			<li><a href="Vozila.php" >Vozila</a></li>
+            <li><a href="Rezervacija.php" >Rezervacija</a></li>
+			<li><a href="Onama.php" >O nama</a></li>
+            <li><a href="Kontakt.php" >Kontakt</a></li>
 		 </ul>
 		 </nav>
 	  

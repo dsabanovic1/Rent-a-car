@@ -1,4 +1,4 @@
-
+/*
 function get(link)
 {
 
@@ -16,11 +16,12 @@ function get(link)
 	
        
     }
-    ajax.open("GET", link + ".html", true);
+    ajax.open("GET", link + ".php", true);
 	     
 	ajax.send();	
 	
 }
+*/
 var imagecount1=1;
 var imagecount2=2;
 var imagecount3=3;
@@ -102,3 +103,9 @@ function validirajRegistraciju()
 	
 	return true;
 }
+
+
+		function f()
+		   {
+				  window.history.back();
+		   }
