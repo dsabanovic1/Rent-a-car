@@ -46,3 +46,7 @@ Nakon pozivanja opcije "obrisi" stranica nigdje ne vodi dalje, što se može riješ
 Takoðer, bug koji sam prekasno shvatio (5 do 12), na stranici admin.php , link "nazad na prethodnu" vodi na "Rezervaciju" a treba na "Registraciju".
 
 IV  - Bug-ovi koje ste primijetili ali ne znate rješenje
+
+
+
+ http://rentacaragencija-rentacar.44fs.preview.openshiftapps.com 
